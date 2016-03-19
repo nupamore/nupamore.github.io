@@ -1,0 +1,289 @@
+<html>
+<head>
+<title>
+particle
+</title>
+</head>
+<script>
+
+// Developed by NP
+// 2015-03-08
+
+var timeElapsed;
+var particle={				
+	pixelMAX:100,			
+	home:{},
+	context:{},
+	list:[],				
+	pixel:[],				
+	pixels:[],				
+	pixelAddress:[],		
+	create:function(){},	
+	start:function(){}
+};	
+
+var P=function(){return new particle.create(); };
+				
+				
+
+particle.create=function(){ 
+	var p=particle,  
+					
+		id=0,
+		pixelStatus=[],  
+		pixelActivity=[], 
+		live=true,
+		style={amount:p.pixelMAX,
+			fps:60,
+			scope:'pix.x>0&&pix.y>0&&pix.x<1200&&pix.y<850',
+			life:10000
+		},
+		init={
+			x:0,
+			y:0,
+			size:0,
+			shape:'.',
+			color:'rgb(0,0,0)',
+			opacity:100
+		},
+		animate={
+			mx:0,
+			my:0,
+			ax:0,
+			ay:0,
+			msize:0
+		},
+		analyze=function(time,t){
+			setTimeout(function(){
+				var max=p.pixelMAX;  
+				var amount=style.amount;	
+				for(var i=0, num=0;(i<max)&&(num<amount);i++){
+					if(p.pixelAddress[i]==null){  
+						p.pixelAddress[i]=id;
+						p.pixels[i].size=eval(init.size);
+						pixelActivity[i]=pixelActivityFactory(i);
+						pixelActivityFactory(i);
+						pixelActivity[i]();
+						num++;
+					}
+				}
+				drawCanvas();
+			},time);
+		},
+		pixelActivityFactory=function(i){
+			var pix;
+			var red, green, blue;
+			pixelStatus[i]={
+				id:i,
+				frame:0,
+				x:eval(init.x),
+				y:eval(init.y),
+				mx:eval(animate.mx),
+				my:eval(animate.my),
+				ax:eval(animate.ax),
+				ay:eval(animate.ay),
+				size:eval(init.size)
+			};
+			pix=pixelStatus[i];
+			
+			red = 255;
+			green = 255;
+			blue = Math.round(Math.random()*100+150);
+			pixelStatus[i].color = 'rgb('+red+','+green+','+blue+')';
+
+			return function f(){			
+				pixelStatus[i].mx+=pixelStatus[i].ax;
+				pixelStatus[i].my+=pixelStatus[i].ay;
+				pixelStatus[i].x+=pixelStatus[i].mx;
+				pixelStatus[i].y+=pixelStatus[i].my;
+				pixelStatus[i].frame++;
+					
+				if(eval(style.scope)&&pixelStatus[i].frame<style.life&&live){	
+					setTimeout(f,(60/style.fps)*10);
+			
+				}else{
+					p.pixels[i].display='none';
+					p.pixelAddress[i]=null;
+				}
+			}; 
+		},
+		drawCanvas=function(){
+			setInterval(function(){
+				var startTime = new Date().getTime();
+				
+				var max=p.pixelMAX;  
+				var amount=style.amount;	
+	
+				p.context.globalAlpha = 0.1;
+				p.context.fillStyle = 'rgb(0,0,0)';
+				p.context.fillRect(0, 0, p.home.width, p.home.height);
+				
+				for(var i=0, num=0;(i<max)&&(num<amount);i++){
+					p.context.globalAlpha = 1;
+					p.context.fillStyle = pixelStatus[i].color;
+					p.context.fillRect(pixelStatus[i].x, top=pixelStatus[i].y, pixelStatus[i].size, pixelStatus[i].size);
+					num++;
+				}
+				
+				timeElapsed2 = new Date().getTime() - startTime;
+			}, (60/style.fps)*10 );
+		};
+	this.getID=function(){
+		return	id;
+	};
+	this.style=function(s){
+		for (var prop in s){  
+			if(style[prop]!=null){
+				style[prop]=s[prop];
+			}
+			
+		}
+		return this;
+	};
+	this.init=function(i){
+		for(var prop in i){
+			if(init[prop]!=null){
+				init[prop]=i[prop];  
+			}
+		}
+		return this;
+	};
+	this.animate=function(a){
+		for(var prop in a){
+			if(animate[prop]!=null){
+				animate[prop]=a[prop];
+			}
+		}
+		return this;
+	};
+	this.reAnimate=function(a){
+		var startTime = new Date().getTime();
+			
+		var id=this.getID(),max=style.amount;	
+		for(var i=0;i<max;i++){
+			if(p.pixelAddress[i]==id){
+				var pix=pixelStatus[i];
+				for(var prop in a){
+					if(pix[prop]!=null){
+						pix[prop]=eval(a[prop]);
+					}
+				}
+			}
+		}
+							
+		timeElapsed = new Date().getTime() - startTime;
+		
+		return this;
+	};
+	this.run=function(time){
+		analyze(time,this);
+		return this;
+	};
+	this.dead=function(time){
+		setTimeout(function(){live=false;},time);
+	};
+	id=p.list.length;
+	p.list[id]=this;
+	return this;
+};
+
+particle.start=function(max){
+	var p=particle;
+	if(max!=null){
+		p.pixelMAX=max;
+	}
+	p.home=document.getElementById('particleHome');
+	if(p.home==null){
+		document.body.innerHTML="<canvas id='particleHome' width='"+window.screen.availWidth+"' height='"+window.screen.availHeight+"'>Sorry, Your browser doesn't support HTML5 CANVAS</canvas>"+document.body.innerHTML;
+		p.home=document.getElementById('particleHome');
+	}
+	p.context=p.home.getContext("2d");
+	for(var i=0;i<p.pixelMAX;i++){
+		p.pixelAddress[i]=null;
+		p.pixel[i]=null;
+		p.pixels[i] = {
+			left:0,	
+			top:0, 
+			fontSize:10,
+			color:"rgb(0,0,0)",
+			size:10,
+			display:true
+		};
+	}
+};
+</script>
+
+<body bgcolor="black">
+<div id='debug' style='color:white;position:absolute;left:0;top:0;margin:10'></div>
+</body>
+
+<script>
+
+var timeElapsed;
+var timeElapsed2;
+var screenWidth = window.screen.availWidth-100;
+var screenHeight = window.screen.availHeight-110;
+var mousex=200,
+	mousey=200;
+var distance = function(x,y){
+	return Math.sqrt(Math.pow(x,2)+Math.pow(y,2));
+};
+var deubg = document.getElementById('debug');
+var amount = prompt('파티클의 수를 설정해주세요.\n2000개까진 버팁니다.\n(Core2Duo, 2G RAM기준)',2000);
+if(amount==null){ amount=2000 }
+debug.innerHTML = "파티클 생성중..";
+
+setTimeout(function(){
+	particle.start(amount);
+
+	var p1=P()
+	.style({
+		life:Infinity,
+		fps:30,
+		scope: true
+	}).init({
+		x: 'Math.random()*screenWidth',
+		y: 'Math.random()*screenHeight'
+	}).run();
+
+	setInterval(function(){
+		p1.reAnimate({
+			ax:'(function(){' +
+					'if( pix.x<0 ){ pix.mx=-pix.mx; pix.x=0; }' +
+					'if( pix.x>screenWidth ){ pix.mx=-pix.mx; pix.x=screenWidth; }' +
+					'if( pix.y<0 ){ pix.my=-pix.my; pix.y=0; }' +
+					'if( pix.y>screenHeight ){ pix.my=-pix.my; pix.y=screenHeight; }' +
+					'var a = (mousex-pix.x)/distance(mousex-pix.x,mousey-pix.y);' +
+					'return a;' +
+				'})();',
+			ay:'(mousey-pix.y)/distance(mousex-pix.x,mousey-pix.y)',
+			mx:'pix.mx-pix.mx/10',
+			my:'pix.my-pix.my/10',
+			size:'distance(mousex-pix.x, mousey-pix.y)/300+1'
+		});
+		
+		debug.innerHTML = "pixelAmount : "+amount+"</br>"
+						+ "processTime : "+(timeElapsed)+"</br>"
+						+ "drawTime : "+(timeElapsed2)+"</br>"
+						+ "mouxex : "+mousex+"</br>"
+						+ "mouxey : "+mousey+"</br>";
+		
+	},100);
+
+	document.body.onmousemove=function(){ 
+		mousex = event.clientX;		
+		mousey = event.clientY;
+	};
+	document.body.onclick = function(){
+		p1.reAnimate({
+			ax:'-((mousex-pix.x)/distance(mousex-pix.x,mousey-pix.y))*10',
+			ay:'-((mousey-pix.y)/distance(mousex-pix.x,mousey-pix.y))*10'
+		});
+	};
+
+	
+}, 100);
+
+
+</script>
+</html>

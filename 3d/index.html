@@ -1,0 +1,365 @@
+<!doctype html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.js'></script>﻿
+<script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+<script src="lib.js"></script>
+
+<style>
+
+body{
+	background-color: #000;
+	width:100%;
+	height:100%;
+	position:fixed;
+}
+.nav{
+	position: fixed;
+	left: 20px;
+}
+#view {
+	margin: 0 auto;
+	text-align: center;
+	float:none;
+}
+.title {
+	margin: 10px;
+	display: inline-block;
+	color: #FFF;
+}
+#numberValue{
+	color: #fff;
+}
+.menu {
+	right: 20px;
+	bottom: 20px;
+	margin: 10px;
+	display: inline-block;
+	position: fixed;
+}
+
+#loading {
+	color: #fff;
+	font-size: 70px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-35px,-35px);
+	display: none;
+}
+
+header { width:700px; height:100%; background:linear-gradient(-60deg, #000, #444, #aaa); opacity: 0.8;}
+header { transform: skewX(-50deg);}
+header { position: fixed; top:0px; left:-750px;}
+
+</style>
+
+</head>
+
+
+
+
+<body>
+
+<header></header>
+
+<section id="side"></section>
+<div class='container nav'>
+	<div class='title'>
+		<h1>3D스캐너</h1>
+	</div>
+
+	<div id='numberValue'>
+	</div>
+</div>
+
+<div class='menu'>
+	<button id='XYZ'>XYZ</button>
+	<button id='3d'>3d</button>
+	<button id='2d'>2d</button>
+	<button id='down'>download</button>
+</div>
+
+
+<div id=loading><i class="fa fa-spinner fa-pulse"></i></div>
+
+
+<div>
+	<div id=view></div>
+</div>
+
+</body>
+
+
+
+
+
+<script type="text/javascript">
+
+var view = document.getElementById('view');
+var data = "[[20,23,23,23,22,23,23,23,23,23,23,23,23,22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,22,23,23,23,23,23,23,24,23,21,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,22,22,22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,22],[22,23,23,23,23,23,23,22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,24,23,23,23,23,23,24,23,24,23,23,23,23,23,23,23,23,23,23,23,23,23,23,24,24,23],[22,23,23,23,23,23,24,24,24,22,24,24,24,23,23,24,24,23,23,23,23,23,23,23,23,23,22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23],[23,23,22,23,23,23,23,23,23,23,23,22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,22,23,23,24,23,23,23,23,23,23,23,24,24,24,24,24,24,23,23,23],[23,23,23,23,23,22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,22,23,23,23,23,23,23,23,22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,22],[23,23,23,23,23,23,23,23,24,24,23,23,23,23,23,23,23,23,23,23,23,23,23,23,22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23],[22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,24,24,24,24,23,23,23,24,24,24,24,24,24,24,22,24,24,24,24,24,24,23,23,23,23,23,23,24,24,24,24,23,24,24,24,24,24,24,23,23,23,23,24,24,24,24,23,23,23,23,24,24,24],[23,23,23,23,23,23,23,24,24,24,23,23,24,24,24,24,24,24,24,23,23,24,24,24,24,24,24,23,23,24,24,24,24,24,24,23,23,23,24,23,24,24,24,24,24,23,24,24,24,24,24,24,23,23,23,24,24,24,24,24,24,24,23,24,24,24,24,24,24,23,22,23,23,23],[23,23,23,23,22,23,23,24,24,24,24,24,23,23,24,24,24,24,24,24,23,23,24,24,24,24,23,24,24,23,22,24,24,24,24,24,24,23,23,23,24,24,24,24,24,23,23,22,24,24,24,24,24,24,24,23,23,24,24,24,24,24,23,23,24,23,24,24,24,24,24,24,23,23],[23,23,23,23,23,23,23,24,24,24,24,24,24,23,23,24,24,24,24,24,24,24,23,23,24,24,24,24,24,24,23,23,24,24,24,24,24,24,23,23,23,24,24,24,24,24,24,24,23,23,23,23,23,23,23,23,23,23,23,24,23,24,24,24,24,23,23,24,23,24,24,24,23,23]]";
+var type = '3d';
+var camera, renderer, controls;
+var geometry, material;
+var center;
+var socket = io.connect('http://192.168.43.181:3000');
+var arr = '';
+var loading = document.getElementById('loading');
+
+
+document.getElementById('down').onclick = function(){
+	download('3dScan');
+};
+document.getElementById('3d').onclick = function(){
+	if( view.lastChild ){
+		view.removeChild( view.lastChild );
+		start3d();
+	}
+	type='3d';
+	socket.emit('arduinoIn', '2');
+	loading.style.display = 'block';
+};
+document.getElementById('2d').onclick = function(){
+	if( view.lastChild ){
+		view.removeChild( view.lastChild );
+		start3d();
+	}
+	type='2d';
+	socket.emit('arduinoIn', '1');
+	loading.style.display = 'block';
+};
+document.getElementById('XYZ').onclick = function(){
+	if( view.lastChild ){
+		view.removeChild( view.lastChild );
+		start3d();
+	}
+	type='XYZ';
+	socket.emit('arduinoIn', '4');
+	loading.style.display = 'block';
+};
+socket.on('test', function(a){
+  console.log(a);
+  if(a.trim()=='a'){
+    draw(type, eval(arr));
+  }
+	else if(a.trim()=='x'){
+    drawBox(eval(arr));
+  }
+	else{
+		arr+=a;
+	}
+});
+
+
+start3d();
+draw(type, eval(data));
+
+function start3d( ){
+
+
+    init();
+    animate();
+
+    function init() {
+
+        scene = new THREE.Scene();
+				renderer = new THREE.WebGLRenderer();
+        renderer.setSize( window.innerWidth*9.9/10, window.innerHeight*9.9/10 );
+				document.getElementById("view").appendChild( renderer.domElement );
+
+        camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 10000 );
+				clock = new THREE.Clock();
+				controls = new THREE.TrackballControls( camera, renderer.domElement );
+				controls.minDistance = 10;
+				controls.maxDistance = 500;
+        camera.position.z = 100;
+				camera.position.y = 50;
+
+				var hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0.6 );
+				hemiLight.color.setHSL( 0.6, 0.6, 0.6 );
+				hemiLight.groundColor.setHSL( 0.095, 1, 0.75 );
+				hemiLight.position.set( 0, 500, 0 );
+				scene.add( hemiLight );
+
+				var dirLight = new THREE.DirectionalLight( 0xffffff, 1 );
+				dirLight.color.setHSL( 0.1, 1, 0.95 );
+				dirLight.position.set( -1, 1.75, 1 );
+				dirLight.position.multiplyScalar( 50 );
+				scene.add( dirLight );
+
+				//center
+				geometry = new THREE.BoxGeometry( 2, 2, 2 );
+				material = new THREE.MeshBasicMaterial( { color: 0xffff00, wireframe: true } );
+				center = new THREE.Mesh( geometry, material );
+				center.position.set(0,1,0);
+				scene.add( center );
+
+				// Grid
+
+				var line_material = new THREE.LineBasicMaterial( { color: 0x303030 } ),
+					geometry = new THREE.Geometry(),
+					floor = 0, step = 25;
+
+				for ( var i = 0; i <= 40; i ++ ) {
+
+					geometry.vertices.push( new THREE.Vector3( - 500, floor, i * step - 500 ) );
+					geometry.vertices.push( new THREE.Vector3(   500, floor, i * step - 500 ) );
+
+					geometry.vertices.push( new THREE.Vector3( i * step - 500, floor, -500 ) );
+					geometry.vertices.push( new THREE.Vector3( i * step - 500, floor,  500 ) );
+
+				}
+
+				var grid = new THREE.Line( geometry, line_material, THREE.LinePieces );
+				scene.add( grid );
+
+    }
+
+    function animate() {
+
+			requestAnimationFrame( animate );
+			controls.update();
+			renderer.render( scene, camera );
+
+    }
+}
+
+// 좌표 구하는 함수
+function getCoord(yDegree, zDegree, distance){
+	var y = Math.cos( (yDegree*Math.PI)/180 ) * distance;
+	var distanceZ = Math.sqrt((distance*distance)-(y*y));
+	var z = Math.cos( (zDegree*Math.PI)/180 ) * distanceZ;
+	var x = Math.sqrt((distanceZ*distanceZ)-(z*z));
+	if(zDegree>180) return [x,y,z];
+	else return [-x,y,z];
+}
+
+function draw(type, data){
+
+	loading.style.display = 'none';
+
+	var yDegreeNum = 90/(data.length-1);
+	var zDegreeNum = 360/data[0].length;
+
+	var coord;
+	geometry = new THREE.Geometry();
+	material = new THREE.LineBasicMaterial({
+		color: 0x00ff00
+	});
+	var vector;
+	vertice = [];		//line
+	vertice2 = [];	//shape
+
+	var girth = 0;	//둘레
+	var area = 0;		//면적
+
+
+	var i,j;
+	for(i=0; i<data.length; i++){
+		vertice[i] = [];
+		vertice2[i] = [];
+
+		for(j=0; j<data[0].length; j++){
+			coord = getCoord( 90-yDegreeNum*i, j*zDegreeNum, data[i][j] );
+			vector = new THREE.Vector3(coord[0],coord[1],coord[2]);
+			geometry.vertices.push( vector );
+			vertice[i].push( vector );
+
+			if(i==0){
+				vertice2[0].push( new THREE.Vector2(coord[0],coord[2]) );
+				var a = data[0][j];
+				var b = data[0][j+1] || data[0][0];
+
+				girth += Math.sqrt((a*a)+(b*b)-(2*a*b)*Math.cos(zDegreeNum*(Math.PI/180)));
+				area += (a*Math.sin(zDegreeNum*(Math.PI/180))*b)/2;
+			}
+
+		}
+
+		coord = getCoord( 90-yDegreeNum*i, j*zDegreeNum, data[i][0] );
+		geometry.vertices.push(new THREE.Vector3(coord[0],coord[1],coord[2]));
+
+	}
+	geometry.vertices.push( new THREE.Vector3(0,0,0) );
+	for(j=0; j<data[0].length; j++){
+
+		for(i=0; i<data.length; i++){
+			geometry.vertices.push( vertice[i][j] );
+		}
+		geometry.vertices.push( new THREE.Vector3(0,0,0) );
+
+	}
+
+	if( type=='3d' ){
+		var line = new THREE.Line(geometry, material);
+		scene.add( line );
+	}
+
+
+	if( type=='2d' ){
+	//extrude
+		var shape = new THREE.Shape(vertice2[0]);
+		var extrudeSettings = { amount: data[data.length-1][0], bevelEnabled: false };
+		var geometry = new THREE.ExtrudeGeometry( shape, extrudeSettings );
+		var material = new THREE.MeshPhongMaterial( { color: 0x888888, side: THREE.DoubleSide, transparent: true, opacity: 0.5 } );
+		var material2 = new THREE.MeshPhongMaterial( { color: 0x00ff00, side: THREE.DoubleSide, transparent: true, wireframe: true } );
+		var mesh = new THREE.Mesh( geometry, material );
+		mesh.rotation.x = Math.PI/2;
+		mesh.position.y = data[data.length-1][0];
+		scene.add( mesh );
+		var wireframe = new THREE.Mesh( geometry, material2 );
+		wireframe.rotation.x = Math.PI/2;
+		wireframe.position.y = data[data.length-1][0];
+		scene.add( wireframe );
+	}
+
+	console.log("각 수 " + data[0].length);
+
+	document.getElementById('numberValue').innerHTML =
+		"높이 : " + Math.round(data[data.length-1][0]/10)*10 + "cm<br>" +
+		"둘레 : " + Math.round(girth*10)/10 + "cm<br>" +
+		"넓이 : " + Math.round((area/10000)*100)/100 +"m<sup>2</sup>";
+
+	setTimeout(function(){
+			arr = '';
+	}, 1000);
+}
+function drawBox(data){
+	var x = data[0]*2;
+	var z = data[2];
+	var y = data[1]*2;
+
+	geometry = new THREE.BoxGeometry( x,z,y );
+	material = new THREE.MeshBasicMaterial( { color: 0x00ff00, wireframe: true } );
+	var box = new THREE.Mesh( geometry, material );
+	box.position.set(0,z/2,0);
+	scene.add( box );
+	loading.style.display = 'none';
+
+	document.getElementById('numberValue').innerHTML =
+		"높이 : " + Math.round(z*10)/10 + "cm<br>" +
+		"둘레 : " + Math.round((2*x+2*y)*10)/10 + "cm<br>" +
+		"넓이 : " + Math.round((x*y/10000)*100)/100 +"m<sup>2</sup>";
+
+	setTimeout(function(){
+			arr = '';
+	}, 1000);
+}
+
+function download(name){
+	var exporter =  new THREE.OBJExporter();
+	var link = document.createElement('a');
+	link.download = (name||'untitled') + '.obj';
+	link.href = 'data:Application/octet-stream, ' + encodeURIComponent(exporter.parse(scene));
+	link.click();
+	document.body.removeChild(link);
+	console.log( exporter.parse( scene ) );
+}
+</script>
