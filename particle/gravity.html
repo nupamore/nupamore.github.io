@@ -1,5 +1,6 @@
 <html>
 <head>
+	<meta charset="utf-8">
 <title>
 gravity
 </title>
@@ -10,28 +11,28 @@ gravity
 // 2015-03-08
 
 var timeElapsed;
-var particle={				
-	pixelMAX:100,			
+var particle={
+	pixelMAX:100,
 	home:{},
 	context:{},
-	list:[],				
-	pixel:[],				
-	pixels:[],				
-	pixelAddress:[],		
-	create:function(){},	
+	list:[],
+	pixel:[],
+	pixels:[],
+	pixelAddress:[],
+	create:function(){},
 	start:function(){}
-};	
+};
 
 var P=function(){return new particle.create(); };
-				
-				
 
-particle.create=function(){ 
-	var p=particle,  
-					
+
+
+particle.create=function(){
+	var p=particle,
+
 		id=0,
-		pixelStatus=[],  
-		pixelActivity=[], 
+		pixelStatus=[],
+		pixelActivity=[],
 		live=true,
 		style={amount:p.pixelMAX,
 			fps:60,
@@ -55,10 +56,10 @@ particle.create=function(){
 		},
 		analyze=function(time,t){
 			setTimeout(function(){
-				var max=p.pixelMAX;  
-				var amount=style.amount;	
+				var max=p.pixelMAX;
+				var amount=style.amount;
 				for(var i=0, num=0;(i<max)&&(num<amount);i++){
-					if(p.pixelAddress[i]==null){  
+					if(p.pixelAddress[i]==null){
 						p.pixelAddress[i]=id;
 						p.pixels[i].size=eval(init.size);
 						pixelActivity[i]=pixelActivityFactory(i);
@@ -85,46 +86,46 @@ particle.create=function(){
 				size:eval(init.size)
 			};
 			pix=pixelStatus[i];
-			
+
 			red = 255;
 			green = 255;
 			blue = Math.round(Math.random()*100+150);
 			pixelStatus[i].color = 'rgb('+red+','+green+','+blue+')';
 
-			return function f(){			
+			return function f(){
 				pixelStatus[i].mx+=pixelStatus[i].ax;
 				pixelStatus[i].my+=pixelStatus[i].ay;
 				pixelStatus[i].x+=pixelStatus[i].mx;
 				pixelStatus[i].y+=pixelStatus[i].my;
 				pixelStatus[i].frame++;
-					
-				if(eval(style.scope)&&pixelStatus[i].frame<style.life&&live){	
+
+				if(eval(style.scope)&&pixelStatus[i].frame<style.life&&live){
 					setTimeout(f,(60/style.fps)*10);
-			
+
 				}else{
 					p.pixels[i].display='none';
 					p.pixelAddress[i]=null;
 				}
-			}; 
+			};
 		},
 		drawCanvas=function(){
 			setInterval(function(){
 				var startTime = new Date().getTime();
-				
-				var max=p.pixelMAX;  
-				var amount=style.amount;	
-	
+
+				var max=p.pixelMAX;
+				var amount=style.amount;
+
 				p.context.globalAlpha = 0.3;
 				p.context.fillStyle = 'rgb(0,0,0)';
 				p.context.fillRect(0, 0, p.home.width, p.home.height);
-				
+
 				for(var i=0, num=0;(i<max)&&(num<amount);i++){
 					p.context.globalAlpha = 1;
 					p.context.fillStyle = pixelStatus[i].color;
 					p.context.fillRect(pixelStatus[i].x, top=pixelStatus[i].y, pixelStatus[i].size, pixelStatus[i].size);
 					num++;
 				}
-				
+
 				timeElapsed2 = new Date().getTime() - startTime;
 			}, (60/style.fps)*10 );
 		};
@@ -132,18 +133,18 @@ particle.create=function(){
 		return	id;
 	};
 	this.style=function(s){
-		for (var prop in s){  
+		for (var prop in s){
 			if(style[prop]!=null){
 				style[prop]=s[prop];
 			}
-			
+
 		}
 		return this;
 	};
 	this.init=function(i){
 		for(var prop in i){
 			if(init[prop]!=null){
-				init[prop]=i[prop];  
+				init[prop]=i[prop];
 			}
 		}
 		return this;
@@ -158,8 +159,8 @@ particle.create=function(){
 	};
 	this.reAnimate=function(a){
 		var startTime = new Date().getTime();
-			
-		var id=this.getID(),max=style.amount;	
+
+		var id=this.getID(),max=style.amount;
 		for(var i=0;i<max;i++){
 			if(p.pixelAddress[i]==id){
 				var pix=pixelStatus[i];
@@ -170,9 +171,9 @@ particle.create=function(){
 				}
 			}
 		}
-							
+
 		timeElapsed = new Date().getTime() - startTime;
-		
+
 		return this;
 	};
 	this.run=function(time){
@@ -202,8 +203,8 @@ particle.start=function(max){
 		p.pixelAddress[i]=null;
 		p.pixel[i]=null;
 		p.pixels[i] = {
-			left:0,	
-			top:0, 
+			left:0,
+			top:0,
 			fontSize:10,
 			color:"rgb(0,0,0)",
 			size:10,
@@ -217,11 +218,11 @@ particle.start=function(max){
 <div id='debug' style='color:white;position:absolute;left:0;top:0;margin:10'></div>
 </body>
 
-<div id='sun1' style='color:white;position:absolute;left:300;top:300;font-size:20'>¡Ü</div>
+<div id='sun1' style='color:white;position:absolute;left:300;top:300;font-size:20'>ï¿½ï¿½</div>
 </body>
-<div id='sun2' style='color:white;position:absolute;left:700;top:600;font-size:50'>¡Ü</div>
+<div id='sun2' style='color:white;position:absolute;left:700;top:600;font-size:50'>ï¿½ï¿½</div>
 </body>
-<div id='sun3' style='color:white;position:absolute;left:1200;top:200;font-size:20'>¡Ü</div>
+<div id='sun3' style='color:white;position:absolute;left:1200;top:200;font-size:20'>ï¿½ï¿½</div>
 </body>
 
 <script>
@@ -236,9 +237,9 @@ var distance = function(x,y){
 	return Math.sqrt(Math.pow(x,2)+Math.pow(y,2));
 };
 var deubg = document.getElementById('debug');
-var amount = prompt('ÆÄÆ¼Å¬ÀÇ ¼ö¸¦ ¼³Á¤ÇØÁÖ¼¼¿ä.\n2000°³±îÁø ¹öÆÁ´Ï´Ù.\n(Core2Duo, 2G RAM±âÁØ)',2000);
+var amount = prompt('ï¿½ï¿½Æ¼Å¬ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.\n2000ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.\n(Core2Duo, 2G RAMï¿½ï¿½ï¿½ï¿½)',2000);
 if(amount==null){ amount=2000 }
-debug.innerHTML = "ÆÄÆ¼Å¬ »ý¼ºÁß..";
+debug.innerHTML = "ï¿½ï¿½Æ¼Å¬ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½..";
 
 setTimeout(function(){
 	particle.start(amount);
@@ -281,17 +282,17 @@ setTimeout(function(){
 			mx:'pix.mx-pix.mx/100',
 			my:'pix.my-pix.my/100'
 		});
-		
+
 		debug.innerHTML = "pixelAmount : "+amount+"</br>"
 						+ "processTime : "+(timeElapsed)+"</br>"
 						+ "drawTime : "+(timeElapsed2)+"</br>"
 						+ "mousex : "+mousex+"</br>"
 						+ "mousey : "+mousey+"</br>";
-		
+
 	},100);
 
-	document.body.onmousemove=function(){ 
-		mousex = event.clientX;		
+	document.body.onmousemove=function(){
+		mousex = event.clientX;
 		mousey = event.clientY;
 	};
 	document.body.onclick = function(){
@@ -300,7 +301,7 @@ setTimeout(function(){
 			ay:'-((mousey-pix.y)/distance(mousex-pix.x,mousey-pix.y))*10'
 		});
 	};
-	
+
 }, 100);
 
 
