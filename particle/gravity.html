@@ -218,11 +218,11 @@ particle.start=function(max){
 <div id='debug' style='color:white;position:absolute;left:0;top:0;margin:10'></div>
 </body>
 
-<div id='sun1' style='color:white;position:absolute;left:300;top:300;font-size:20'>��</div>
+<div id='sun1' style='color:white;position:absolute;left:300;top:300;font-size:20'>O</div>
 </body>
-<div id='sun2' style='color:white;position:absolute;left:700;top:600;font-size:50'>��</div>
+<div id='sun2' style='color:white;position:absolute;left:700;top:600;font-size:50'>O</div>
 </body>
-<div id='sun3' style='color:white;position:absolute;left:1200;top:200;font-size:20'>��</div>
+<div id='sun3' style='color:white;position:absolute;left:1200;top:200;font-size:20'>O</div>
 </body>
 
 <script>
@@ -237,9 +237,9 @@ var distance = function(x,y){
 	return Math.sqrt(Math.pow(x,2)+Math.pow(y,2));
 };
 var deubg = document.getElementById('debug');
-var amount = prompt('��ƼŬ�� ���� �������ּ���.\n2000������ �����ϴ�.\n(Core2Duo, 2G RAM����)',2000);
+var amount = prompt('particle amount',2000);
 if(amount==null){ amount=2000 }
-debug.innerHTML = "��ƼŬ ������..";
+debug.innerHTML = "init..";
 
 setTimeout(function(){
 	particle.start(amount);
