@@ -1,6 +1,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
 particle
 </title>
@@ -230,8 +231,8 @@ var distance = function(x,y){
 	return Math.sqrt(Math.pow(x,2)+Math.pow(y,2));
 };
 var deubg = document.getElementById('debug');
-var amount = prompt('particle amount',2000);
-if(amount==null){ amount=2000 }
+var amount = prompt('particle amount',200);
+if(amount==null){ amount=200 }
 debug.innerHTML = "init..";
 
 setTimeout(function(){
