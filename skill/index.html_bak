@@ -1,0 +1,185 @@
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-1.12.2.min.js" integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk=" crossorigin="anonymous"></script>
+  <style>
+    #option {
+      text-align: center;
+      padding: 10px;
+    }
+    input {
+      text-align: center;
+    }
+    input[type="number"] {
+       width:45px;
+    }
+    #youtube-container {
+      text-align: center;
+      padding: 10px;
+    }
+    table {
+      margin: 0 auto;
+      text-align: center;
+      font-size: 9pt;
+    }
+    td {
+      transition: 0.5s;
+      padding: 3px;
+    }
+    .danger {
+      background-color: #EEE;
+    }
+    #timeline td:hover {
+      transition: 0.1s;
+      cursor: pointer;
+      color: white;
+      background-color: orange;
+    }
+    .active {
+      color: white;
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="option">
+    url : <input id="url" type="text" size=10 value="jd5WqsW9wK0">
+    time : <input id="startTime" type="number" value="6">
+  </div>
+  <div id="youtube-container">
+    <div id="youtube"></div>
+    <table>
+      <tr id="skill-active">
+        <td>　</td>
+        <td>　</td>
+        <td>　</td>
+        <td>　</td>
+        <td>　</td>
+      </tr>
+      <tr id="skill-time">
+        <td><input type="number" value="11" min=0><input type="number" value="9 min=0"></td>
+        <td><input type="number" value="9" min=0><input type="number" value="7" min=0></td>
+        <td><input type="number" value="9" min=0><input type="number" value="6" min=0></td>
+        <td><input type="number" value="11" min=0><input type="number" value="5" min=0></td>
+        <td><input type="number" value="9" min=0><input type="number" value="6" min=0></td>
+      </tr>
+    </table>
+  </div>
+  <div id="timeline-container">
+
+  </div>
+
+</body>
+<script>
+
+  var renderTable = function(skill){
+    var str = "<table id='timeline' cellspacing=0><tr>";
+    for(var i=0; i<150; i++){
+      if(i%30==0){
+        str += "</tr><tr>"
+      }
+      // danger check
+      var danger = true;
+      for(var j in skill){
+        if(i%skill[j][0]<skill[j][1] && i>=skill[j][1]){
+          danger = false;
+        }
+      }
+      //
+      if(danger) str += "<td id='"+i+"sec' class='time danger'><div><b>"+i+"</b></div>";
+      else str += "<td id='"+i+"sec' class='time'><div><b>"+i+"</b></div>";
+      for(var j in skill){
+        if(i%skill[j][0]<skill[j][1] && i>=skill[j][1]){
+          str += "<div>O</div>";
+        }
+        else{
+          str += "<div>　</div>";
+        }
+      }
+      str += "</td>";
+    }
+    str += "</tr></table>"
+    $('#timeline-container').html(str);
+
+    $('#url').change(function(){
+      youtube.loadVideoById($(this).val(), 0, "large");
+    });
+
+    $('.time').click(function(){
+      var time = $(this).children()[0].innerText*1;
+      youtube.seekTo(time + $startTime.val()*1);
+    });
+  };
+
+
+  // youtube-api
+  (function(){
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  })();
+
+  var youtube;
+  function onYouTubeIframeAPIReady() {
+    youtube = new YT.Player('youtube', {
+      videoId: 'jd5WqsW9wK0',
+      events: {
+        'onReady': function(){
+          console.log('ready');
+        },
+        'onStateChange': function(event){
+          if(event.data == YT.PlayerState.ENDED){
+            console.log('end');
+          }
+        }
+      }
+    });
+  }
+
+  var $startTime = $('#startTime');
+  var $time = $('.time');
+
+  var timeCheck = function(){
+    var now = Math.round( youtube.getCurrentTime() ) - $startTime.val();
+    $('.time').removeClass('active');
+    $('#'+now+'sec').addClass('active');
+    $('#'+now+'sec').children().each(function(index){
+      if( $(this).text() == 'O' ){
+        $('#skill-active > td:nth-child('+index+')').addClass('active');
+      }
+      else{
+        $('#skill-active > td:nth-child('+index+')').removeClass('active');
+      }
+    });
+  };
+  setInterval(timeCheck, 100);
+
+
+  var skill = [
+    [11,9],
+    [9,7.5],
+    [9,6],
+    [11,7.5],
+    [9,6]
+  ];
+  $('#skill-time > td > input').change(function(){
+    $('#skill-time > td > input').each(function(index){
+      if(!(index%2)){
+        skill[index/2][0] = $(this).val();
+      }
+      else{
+        skill[(index-1)/2][1] = $(this).val();
+      }
+    });
+    renderTable(skill);
+  });
+  renderTable(skill);
+
+
+
+
+
+</script>
