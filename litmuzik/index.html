@@ -46,8 +46,8 @@
 
     });
 
-
-    var songChange = function(name){
+    var songChange = function(){
+      var name = $(event.target).attr('data-youtube');
       YMP.change(name);
     };
   </script>
@@ -81,12 +81,14 @@
 
   <div id="content" class="tab-content">
     <!-- Section 1 -->
-    <section id="profile" class="container tab-pane fade in active">
+    <section id="profile" class="container tab-pane fade">
       <div class="container">
         <div class="page-header">
           <h1>Profile</h1>
         </div>
       </div>
+      Comimg soon.
+      <!--
       <ul id="hexGrid">
           <li class="hex">
               <a class="hexIn">
@@ -124,6 +126,7 @@
               </a>
           </li>
       </ul>
+    -->
     </section>
 
     <!-- Section 2 -->
@@ -150,9 +153,43 @@
     </section>
 
     <!-- Section 3 -->
-    <section id="discography" class="tab-pane fade">
+    <section id="discography" class="tab-pane fade in active">
       <div class="container">
         <div class="container">
+          <div class="row">
+            <div class="page-header">
+              <h1>LIT 1st demotape</h1>
+              <span>2016.05.03</span>
+            </div>
+            <div class="col-md-5">
+              <img src="img/1st_demotape.jpg" alt="">
+            </div>
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-6">
+              <ol class="tracklist">
+                <li><a class="music" onClick="songChange()" data-youtube="XA0c-dC-7Dw">
+                  Bounce Like This
+                </a></li>
+                <li><a class="music" onClick="songChange()" data-youtube="le3LfqZiCjA">
+                  Streetus(Corcky's Beatbox)
+                </a></li>
+                <li><a class="music" onClick="songChange()" data-youtube="GMCKQu9fScc">
+                  오직
+                </a></li>
+                <li><a class="music" onClick="songChange()" data-youtube="7bj3SPqk69s">
+                  허전해 (Producer/ 하얘)
+                </a></li>
+                <li><a class="music" onClick="songChange()" data-youtube="DRcbLDFx9so">
+                  미완성
+                </a></li>
+              </ol>
+              <br><br>
+              <p>music & words by litmuzik</p>
+            </div>
+          </div>
+          <hr>
           <div class="row">
             <div class="page-header">
               <h1>Parachute <small> / Dispit</small></h1>
@@ -166,12 +203,12 @@
             </div>
             <div class="col-md-6 col-md-pull-6">
               <ol class="tracklist">
-                <li><a class="music" href="javascript:songChange('IzLCr_nL270');" data-youtube="IzLCr_nL270">
+                <li><a class="music" onClick="songChange()" data-youtube="IzLCr_nL270">
                   Parachute - Dispit
                 </a></li>
               </ol>
               <br><br>
-              <p>이상의 남는 끝에 그리하였는가? 소리다.이것은 따뜻한 기관과 얼음과 온갖 되는 구할 가치를 때문이다. 하는 인간이 그들의 ? 구하기 봄날의 같은 얼마나 있으랴? 주며, 청춘 그들의 끝까지 관현악이며, 것이다. 영락과 봄날의 생생하며, 이것이다. 철환하였는가 미인을 가슴이 없으면, 구하기 것이다. 광야에서 따뜻한 목숨이 영락과 천고에 것이다. 생생하며, 가치를 것이다.보라, 따뜻한 것이다. 눈이 미인을 수 운다. 예수는 끓는 끝까지 우리는 보는 있다. 방황하여도, 천고에 못할 교향악이다.</p>
+              <p>music & words by litmuzik</p>
             </div>
           </div>
           <hr>
@@ -188,12 +225,12 @@
             </div>
             <div class="col-md-6">
               <ol class="tracklist">
-                <li><a class="music" href="javascript:songChange('AnCYMmrVIw0');" data-youtube="AnCYMmrVIw0">
+                <li><a class="music" onClick="songChange()" data-youtube="AnCYMmrVIw0">
                   오치동 - 해태
                 </a></li>
               </ol>
               <br><br>
-              <p>이상의 남는 끝에 그리하였는가? 소리다.이것은 따뜻한 기관과 얼음과 온갖 되는 구할 가치를 때문이다. 하는 인간이 그들의 ? 구하기 봄날의 같은 얼마나 있으랴? 주며, 청춘 그들의 끝까지 관현악이며, 것이다. 영락과 봄날의 생생하며, 이것이다. 철환하였는가 미인을 가슴이 없으면, 구하기 것이다. 광야에서 따뜻한 목숨이 영락과 천고에 것이다. 생생하며, 가치를 것이다.보라, 따뜻한 것이다. 눈이 미인을 수 운다. 예수는 끓는 끝까지 우리는 보는 있다. 방황하여도, 천고에 못할 교향악이다.</p>
+              <p>music & words by litmuzik</p>
             </div>
           </div>
           <hr>
