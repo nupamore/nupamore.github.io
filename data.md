@@ -16,6 +16,7 @@
 [gmail](mailto:nupamore@gmail.com)
 
 
+
 --- split ---
 
 
@@ -40,22 +41,25 @@
     - [Hsub editor](https://github.com/nupamore/Hsub-Editor)
     - [Canvas game engine](https://github.com/MCStudy/MCS-Engine)
     - [Youtube music player](https://github.com/nupamore/youtube-music-player)
+  - Publishing
+    - [LIT MUZIK](http://litmuzik.com/) *JQuery, Bootstrap*
 
 <br>
 
 ## Server Administrator
-- Shell experience *Ubuntu, MacOS*
+- Shell experience *Linux, MacOS*
 - Managing 2 physical servers
   - AWS *EC2, RDS*
   - Raspberry pi
 
 <br>
 
-## Game & Graphics
+## Play
+- [Markdown Music Notation](https://github.com/nupamore/Markdown-Music-Notation)
 - [Canvas game](https://github.com/MCStudy/findTheSun)
 - [My graphics works](https://github.com/nupamore/graphics) *Three.js, Processing*
 
 <br>
 
 ## Other experience
-*C++, Java, Python, PHP, JSP, Android, JQuery, Unreal, Unity, iBatis, PLSQL, VRML, Arduino, Electron, OpenGL, Jess, Functional programming*
+*C++, Java, Python, PHP, JSP, Android, Electron, Materialize, MDL, Unreal, Unity, iBatis, PLSQL, VRML, Arduino, OpenGL, Jess, Functional programming*
