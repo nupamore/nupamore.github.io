@@ -1,0 +1,41 @@
+
+body {
+  color: #222;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+footer {
+  bottom: 0px;
+}
+
+em {
+  font-size: small;
+  color: #aaa;
+  margin: 0 5px;
+  font-weight: normal;
+}
+
+ul {
+  margin: 0 0 10px -15px;
+}
+
+li {
+  margin: 5px 0;
+}
+
+code {
+  color: #888;
+  background-color: #f5f5f5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0;
+}
+
+@media print, screen and (max-width: 960px) {
+  section {
+    border: 0;
+    margin: 50px 0;
+  }
+}
