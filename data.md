@@ -12,8 +12,8 @@
 [github](https://github.com/nupamore),
 [npm](https://www.npmjs.com/~nupamore),
 [blog](http://blog.naver.com/lsb522),
-[twitter](https://twitter.com/nupamoreP)
-
+[twitter](https://twitter.com/nupamoreP),
+[gmail](mailto:nupamore@gmail.com)
 
 
 --- split ---
