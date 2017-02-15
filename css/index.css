@@ -38,4 +38,9 @@ h1, h2, h3, h4, h5, h6 {
     border: 0;
     margin: 50px 0;
   }
+
+  em {
+    display: block;
+    margin: 0;
+  }
 }

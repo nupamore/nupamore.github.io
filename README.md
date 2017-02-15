@@ -12,15 +12,14 @@
 <br>
 
 ### Contact
-[github](https://github.com/nupamore),
-[npm](https://www.npmjs.com/~nupamore),
-[blog](http://blog.naver.com/lsb522),
-[twitter](https://twitter.com/nupamoreP),
-[gmail](mailto:nupamore@gmail.com)
+[<i class="fa fa-github-alt fa-lg" aria-hidden="true" title="Github"></i>](https://github.com/nupamore)
+[<i class="fa fa-twitter fa-lg" aria-hidden="true" title="Twitter"></i>](https://twitter.com/nupamoreP)
+[<i class="fa fa-rss fa-lg" aria-hidden="true" title="Blog"></i>](http://blog.naver.com/lsb522)
+[<i class="fa fa-envelope fa-lg" aria-hidden="true" title="Gmail"></i>](mailto:nupamore@gmail.com)
 
 
 
---- split ---
+<br><!-- split --><br>
 
 
 
@@ -28,29 +27,25 @@
 ---
 ## Web
 - ### Backend
-  - Node.js projects experience
-    *Express, Mysql*
+  - Open API experience *OAuth, Twitter, Kakaotalk, Youtube*
+  - Node.js projects experience *Express, Mysql*
     - [CGSS bot](https://github.com/nupamore/cgss-yellowid)
-      *Twitter, Kakaotalk API*
     - [hassan.kr](http://hassan.kr/)
-  - Published npm libraries
+  - Published npm modules
     - [anisub](https://www.npmjs.com/package/anisub)
     - [smi2vtt](https://www.npmjs.com/package/smi2vtt)
 
 - ### Frontend
   - VanillaJS development experience
-  - Framework experience
-    *Vue, Angular*
-  - Modern web knowledge
-    *ES6-7, Webpack, Babel, Gulp, Sass*
+  - Framework experience *Vue, Angular*
+    - [Hsub editor](https://github.com/nupamore/Hsub-Editor)
+  - Modern web knowledge *ES6-7, Webpack, Babel, Gulp, Sass*
     - [My boilerplate](https://github.com/nupamore/my-style/tree/master/javascript/boilerplate)
   - Developed web components
-    - [Hsub editor](https://github.com/nupamore/Hsub-Editor)
     - [Canvas game engine](https://github.com/MCStudy/MCS-Engine)
     - [Youtube music player](https://github.com/nupamore/youtube-music-player)
-  - Publishing
+  - Publishing *JQuery, Bootstrap*
     - [LIT MUZIK](http://litmuzik.com/)
-      *JQuery, Bootstrap*
 
 <br>
 
@@ -65,10 +60,9 @@
 ## Play
 - Game
   - [Canvas game](https://github.com/MCStudy/findTheSun)
-  - *now* Studying Unreal engine
-- Graphics
+  - Studying Unreal engine
+- Graphics *Three.js, Processing*
   - [My graphics works](https://github.com/nupamore/graphics)
-    *Three.js, Processing*
 - Music
   - [Markdown Music Notation](http://nupamore.github.io/Markdown-Music-Notation/examples/)
 

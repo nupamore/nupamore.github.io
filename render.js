@@ -1,14 +1,16 @@
 
+const fs = require('fs')
 const ejs = require('ejs')
 const marked = require('marked')
-const fs = require('fs')
 
-const template =
-  fs.readFileSync('template.ejs').toString()
-const data =
-  fs.readFileSync('data.md')
+const template = fs
+  .readFileSync('template.ejs')
   .toString()
-  .split('--- split ---')
+
+const data = fs
+  .readFileSync('README.md')
+  .toString()
+  .split('<br><!-- split --><br>')
 
 
 fs.writeFileSync('index.html', ejs.render(template, {
