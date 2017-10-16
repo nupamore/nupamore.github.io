@@ -1,0 +1,283 @@
+<html lang="ko">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="description" content="릿뮤직은 '소통'이라는 주제로 다양한 사람들이 모여 멋진 메시지를 주고받는 언더그라운드 힙합공연 'Light Up'을 정기적으로 열고 있다.">
+  <title>Litmuzik</title>
+  <!--  Android 5 Chrome Color -->
+  <meta name="theme-color" content="#212121">
+  <link rel="icon" href="img/favicon.png">
+
+  <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="lib/hexagons.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="litmuzik.css">
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="lib/youtube-music-player.js"></script>
+
+
+  <script>
+    $(document).ready(function(){
+      $window = $(window);
+
+      // fixed nav
+      $window.scroll(function(){
+        var navbar = $('.navbar-default'),
+            scroll = $window.scrollTop();
+
+        if (scroll >= $('#intro').height()) navbar.addClass('fixed');
+        else navbar.removeClass('fixed');
+      });
+
+
+      // youtube
+      $('.music').each(function(index, element){
+        YMP.list.push( {
+          name: $(element).attr('data-youtube'),
+          src: $(element).attr('data-youtube')
+        });
+      });
+
+    });
+
+    var songChange = function(){
+      var name = $(event.target).attr('data-youtube');
+      YMP.change(name);
+    };
+  </script>
+</head>
+<body>
+
+  <header id="intro">
+
+    <img class="img-responsive" src="img/intro.jpg">
+
+  </header>
+
+  <div id="player" class="container">
+    <a><i id="ymp-pause" class="fa fa-pause fa-2x"></i></a>
+    <a><i id="ymp-play" class="fa fa-play fa-2x"></i></a>
+    <a><i id="ymp-change" class="fa fa-step-forward fa-2x"></i></a>
+  </div>
+
+
+  <nav class="navbar-default">
+    <div class="container-fluid">
+      <ul class="list-inline navbar-text text-center">
+        <li><a data-toggle="tab" href="#profile">Profile</a></li>
+        <li><a data-toggle="tab" href="#news">News</a></li>
+        <li><a data-toggle="tab" href="#discography">Discography</a></li>
+        <li><a data-toggle="tab" href="#concert">Light Up</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div id="content" class="tab-content">
+    <!-- Section 1 -->
+    <section id="profile" class="container tab-pane fade">
+      <div class="container">
+        <div class="page-header">
+          <h1>Profile</h1>
+        </div>
+      </div>
+      Comimg soon.
+      <!--
+      <ul id="hexGrid">
+          <li class="hex">
+              <a class="hexIn">
+                  <img src="https://farm9.staticflickr.com/8461/8048823381_0fbc2d8efb.jpg" alt="" />
+                  <h1>This is a title</h1>
+                  <p>Some sample text about the article this hexagon leads to</p>
+              </a>
+          </li>
+          <li class="hex">
+              <a class="hexIn">
+                  <img src="https://farm5.staticflickr.com/4144/5053682635_b348b24698.jpg" alt="" />
+                  <h1>This is a title</h1>
+                  <p>Some sample text about the article this hexagon leads to</p>
+              </a>
+          </li>
+          <li class="hex">
+              <a class="hexIn">
+                  <img src="https://farm3.staticflickr.com/2827/10384422264_d9c7299146.jpg" alt="" />
+                  <h1>This is a title</h1>
+                  <p>Some sample text about the article this hexagon leads to</p>
+              </a>
+          </li>
+          <li class="hex">
+              <a class="hexIn">
+                  <img src="https://farm7.staticflickr.com/6217/6216951796_e50778255c.jpg" alt="" />
+                  <h1>This is a title</h1>
+                  <p>Some sample text about the article this hexagon leads to</p>
+              </a>
+          </li>
+          <li class="hex">
+              <a class="hexIn">
+                  <img src="https://farm7.staticflickr.com/6083/6055581292_d94c2d90e3.jpg" alt="" />
+                  <h1>This is a title</h1>
+                  <p>Some sample text about the article this hexagon leads to</p>
+              </a>
+          </li>
+      </ul>
+    -->
+    </section>
+
+    <!-- Section 2 -->
+    <section id="news" class="tab-pane fade">
+      <div class="container">
+        <div class="page-header">
+          <h1>News <small> with Facebook</small></h1>
+        </div>
+        <div class="row fb-container">
+          <div id="fb-root"></div>
+          <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/ko_KR/all.js#xfbml=1&version=v2.5&appId=621888404535999";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>
+          <!-- moblie -->
+          <div class="fb-like-box visible-xs-block" data-href="www.facebook.com/litmuzik" data-width="300" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="true" data-show-border="false"></div>
+          <!-- desktop -->
+          <div class="fb-like-box hidden-xs" data-href="www.facebook.com/litmuzik" data-width="500" data-height="1000" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="true" data-show-border="false"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section id="discography" class="tab-pane fade in active">
+      <div class="container">
+        <div class="container">
+          <div class="row">
+            <div class="page-header">
+              <h1>LIT 1st demotape</h1>
+              <span>2016.05.03</span>
+            </div>
+            <div class="col-md-5">
+              <img src="img/1st_demotape.jpg" alt="">
+            </div>
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-6">
+              <ol class="tracklist">
+                <li><a class="music" onClick="songChange()" data-youtube="XA0c-dC-7Dw">
+                  Bounce Like This
+                </a></li>
+                <li><a class="music" onClick="songChange()" data-youtube="le3LfqZiCjA">
+                  Streetus(Corcky's Beatbox)
+                </a></li>
+                <li><a class="music" onClick="songChange()" data-youtube="GMCKQu9fScc">
+                  오직
+                </a></li>
+                <li><a class="music" onClick="songChange()" data-youtube="7bj3SPqk69s">
+                  허전해 (Producer/ 하얘)
+                </a></li>
+                <li><a class="music" onClick="songChange()" data-youtube="DRcbLDFx9so">
+                  미완성
+                </a></li>
+              </ol>
+              <br><br>
+              <p>music & words by litmuzik</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="page-header">
+              <h1>Parachute <small> / Dispit</small></h1>
+              <span>2016.02.26</span>
+            </div>
+            <div class="col-md-5 col-md-push-7">
+              <img src="img/parachute.jpg" alt="">
+            </div>
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-6 col-md-pull-6">
+              <ol class="tracklist">
+                <li><a class="music" onClick="songChange()" data-youtube="IzLCr_nL270">
+                  Parachute - Dispit
+                </a></li>
+              </ol>
+              <br><br>
+              <p>music & words by litmuzik</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="page-header">
+              <h1>오치동 <small> / 해태</small></h1>
+              <span>2016.02.25</span>
+            </div>
+            <div class="col-md-5">
+              <img src="img/ochidong.jpg" alt="">
+            </div>
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-6">
+              <ol class="tracklist">
+                <li><a class="music" onClick="songChange()" data-youtube="AnCYMmrVIw0">
+                  오치동 - 해태
+                </a></li>
+              </ol>
+              <br><br>
+              <p>music & words by litmuzik</p>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4 -->
+    <section id="concert" class="tab-pane fade">
+      <div class="container">
+        <div class="page-header">
+          <h1>What is 'Light Up'? <small></small></h1>
+        </div>
+        <div class="row container">
+          <p>릿뮤직은 '소통'이라는 주제로 다양한 사람들이 모여 멋진 메시지를 주고받는 언더그라운드 힙합공연 'Light Up'을 정기적으로 열고 있다.</p>
+          <br>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <img src="img/lightup1.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-sm-4">
+            <img src="img/lightup2.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-sm-4">
+            <img src="img/lightup3.jpg" class="img-responsive" alt="">
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6 text-left">
+          <p>LI.T.Muzik</p>
+        </div>
+        <div class="col-xs-6 text-right">
+          <p>Designed by nupa</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

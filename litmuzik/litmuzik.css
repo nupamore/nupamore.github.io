@@ -1,0 +1,114 @@
+
+  body {
+    background-color: black;
+    font-family: 'Noto Sans', sans-serif;
+  }
+  #intro > .container {
+    padding-top: 10%;
+  }
+  #intro div{
+    height: auto;
+  }
+
+  .navbar-default {
+    position: absolute;
+    width: 100%;
+    box-shadow: 0 0 50px rgba(0,0,0,0.4);
+  }
+  .navbar-default > .container-fluid {
+    background-color: #212121;
+  }
+  .fixed {
+    position: fixed;
+    top:0; left:0;
+    z-index: 99;
+  }
+  .navbar-text {
+    float: none;
+    font-size: 15px;
+    color: #BDBDBD;
+  }
+  #player {
+    top: 10px;
+    width: 100px;
+    position: fixed;
+    z-index: 100;
+  }
+  #player i {
+    margin-left: 5px;
+  }
+
+
+
+
+  a {
+    color: #999999;
+    text-decoration:none;
+    transition: 0.3s;
+  }
+  a:hover {
+    color:#FFFFFF;
+    background-color: #424242;
+    cursor: pointer;
+    text-decoration:none;
+  }
+  a:focus {
+    color: #BDBDBD;
+    text-decoration:none;
+  }
+
+  #content {
+    background-color: #FFFFFF;
+    padding-bottom: 100px;
+  }
+
+  section {
+    padding-top: 80px;
+  }
+
+  .fb-container {
+    width: 501px;
+    margin: 0 auto;
+  }
+
+  .tracklist {
+    padding-top: 50px;
+    padding-left: 15px;
+    font-size: 20px;
+    line-height: 40px;
+  }
+  .tracklist > li > .play {
+    color:#FFFFFF;
+    background-color: #424242;
+  }
+
+  #discography img {
+    width: 100%;
+  }
+
+  footer {
+    color: #BDBDBD;
+  }
+  footer .row > div {
+    margin-top: 10px;
+  }
+
+@media screen and (max-width:768px) {
+  section {
+    padding-top: 60px;
+  }
+  #content {
+    background-color: #FFFFFF;
+    padding-bottom: 20px;
+  }
+  #player {
+    display: none;
+  }
+  #concert img {
+    margin-top: 10px;
+  }
+  .fb-container {
+    width: 301px;
+    margin: 0 auto;
+  }
+}

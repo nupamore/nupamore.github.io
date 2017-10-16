@@ -45,7 +45,7 @@
     - [Canvas game engine](https://github.com/MCStudy/MCS-Engine)
     - [Youtube music player](https://github.com/nupamore/youtube-music-player)
   - Publishing *JQuery, Bootstrap*
-    - [LIT MUZIK](http://litmuzik.com/)
+    - [LIT MUZIK](http://nupamore.github.io/litmuzik)
 
 <br>
 
