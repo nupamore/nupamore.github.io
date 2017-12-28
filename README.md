@@ -2,12 +2,13 @@
 [![avatar](img/avatar.png)](https://github.com/nupamore)
 
 # Sangbaek Lee
+- *2017 - now* Pearl Abyss
+  - Front-end web
 - *2013 - 2015* Air Force OICW
   - C4I Development  
     *EJB struts, OracleDB*
-- *2011 - now* Gachon University
+- *2011 - 2017* Gachon University
   - Major in Computer Engineering
-- *2008 - 2011* 양영 디지털고등학교
 
 <br>
 
@@ -60,7 +61,7 @@
 ## Play
 - Game
   - [Canvas game](https://github.com/MCStudy/findTheSun)
-  - Studying Unreal engine
+  - UE4 experience
 - Graphics *Three.js, Processing*
   - [My graphics works](https://github.com/nupamore/graphics)
 - Music
