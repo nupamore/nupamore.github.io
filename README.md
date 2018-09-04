@@ -14,7 +14,6 @@
 
 ### Contact
 [<i class="fa fa-github-alt fa-lg" aria-hidden="true" title="Github"></i>](https://github.com/nupamore)
-[<i class="fa fa-twitter fa-lg" aria-hidden="true" title="Twitter"></i>](https://twitter.com/nupamoreP)
 [<i class="fa fa-rss fa-lg" aria-hidden="true" title="Blog"></i>](http://blog.naver.com/lsb522)
 [<i class="fa fa-envelope fa-lg" aria-hidden="true" title="Gmail"></i>](mailto:nupamore@gmail.com)
 
