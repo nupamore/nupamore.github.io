@@ -2,19 +2,19 @@
 [![avatar](img/avatar.png)](https://github.com/nupamore)
 
 # Sangbaek Lee
-- *2017 - now* Pearl Abyss
+- *2017 - 2019* Pearl Abyss
   - Front-end web
 - *2013 - 2015* Air Force OICW
   - C4I Development  
     *EJB struts, OracleDB*
-- *2011 - 2017* Gachon University
+- *2011 - 2020* Gachon University
   - Major in Computer Engineering
 
 <br>
 
 ### Contact
 [<i class="fa fa-github-alt fa-lg" aria-hidden="true" title="Github"></i>](https://github.com/nupamore)
-[<i class="fa fa-rss fa-lg" aria-hidden="true" title="Blog"></i>](http://blog.naver.com/lsb522)
+[<i class="fa fa-twitter-alt fa-lg" aria-hidden="true" title="Twitter"></i>](https://twitter.com/nupamoreP)
 [<i class="fa fa-envelope fa-lg" aria-hidden="true" title="Gmail"></i>](mailto:nupamore@gmail.com)
 
 
@@ -30,7 +30,7 @@
   - Open API experience *OAuth, Twitter, Kakaotalk, Youtube*
   - Node.js projects experience *Express, Mysql*
     - [CGSS bot](https://github.com/nupamore/cgss-yellowid)
-    - [hassan.kr](http://hassan.kr/)
+    - [hassan.kr](https://github.com/nupamore/Hsub-Editor)
   - Published npm modules
     - [anisub](https://www.npmjs.com/package/anisub)
     - [smi2vtt](https://www.npmjs.com/package/smi2vtt)
@@ -45,7 +45,7 @@
     - [Canvas game engine](https://github.com/MCStudy/MCS-Engine)
     - [Youtube music player](https://github.com/nupamore/youtube-music-player)
   - Publishing *JQuery, Bootstrap*
-    - [LIT MUZIK](http://nupamore.github.io/litmuzik)
+    - In Pearl Abyss
 
 <br>
 
@@ -61,8 +61,9 @@
 - Game
   - [Canvas game](https://github.com/MCStudy/findTheSun)
   - UE4 experience
-- Graphics *Three.js, Processing*
+- Graphics *Three.js, Processing, GLSL*
   - [My graphics works](https://github.com/nupamore/graphics)
+  - [Unity auto resolution shader](https://booth.pm/ko/items/1740420)
 - Music
   - [Markdown Music Notation](http://nupamore.github.io/Markdown-Music-Notation/examples/)
 
@@ -74,4 +75,4 @@ Android, Electron, Arduino,
 Materialize, MDL,
 iBatis, PLSQL,
 Unity, OpenGL, VRML,
-Jess, Functional programming*
+Jess, Functional programming, parcel*
