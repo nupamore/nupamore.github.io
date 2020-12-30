@@ -26,6 +26,17 @@
 I 💖 JS and Golang
 
 ---
+## Web Frontend
+- <=ie8 support experience *DOM, JQuery*
+- Publishing *SCSS, ElementUI*
+  - [Artist page](litmuzik/index.html)
+- Framework & SSR experience *Vue & Nuxt*
+- Modern web knowledge *Webpack, Babel, ESlint, Stylelint, Prettier*
+- Graphics *anime.js, three.js*
+  - [Canvas game engine](https://github.com/MCStudy/MCS-Engine)
+
+<br>
+
 ## Backend
 - Open API experience *JSONP, REST, OAuth, JWT*
 - Web server *express.js, gofiber, AWS Lambda*
@@ -37,15 +48,6 @@ I 💖 JS and Golang
   - [anisub](https://www.npmjs.com/package/anisub),
   [smi2vtt](https://www.npmjs.com/package/smi2vtt)
   - Managing company's npm *Verdaccio*
-
-## Web Frontend
-- <=ie8 support experience *DOM, JQuery*
-- Publishing *SCSS, ElementUI*
-  - [Artist page](litmuzik/index.html)
-- Framework & SSR experience *Vue & Nuxt*
-- Modern web knowledge *Webpack, Babel, ESlint, Stylelint, Prettier*
-- Graphics *anime.js, three.js*
-  - [Canvas game engine](https://github.com/MCStudy/MCS-Engine)
 
 <br>
 
@@ -68,8 +70,9 @@ I 💖 JS and Golang
   - [Markdown Music Notation](https://github.com/nupamore/Markdown-Music-Notation)
 
 <br>
+<br>
 
-## Just experiences
+### Just experiences
 *C++, Java, Python, PHP, JSP,
 AngularJS, Materialize
 Android, Electron, Arduino,
