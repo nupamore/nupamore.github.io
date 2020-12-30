@@ -1,5 +1,5 @@
 
-[![avatar](img/avatar.png)](https://github.com/nupamore)
+[![avatar](img/avatar.jpg)](https://github.com/nupamore)
 
 # Sangbaek Lee
 - *2017 - 2019* Pearl Abyss
@@ -14,7 +14,6 @@
 
 ### Contact
 [<i class="fa fa-github-alt fa-lg" aria-hidden="true" title="Github"></i>](https://github.com/nupamore)
-[<i class="fa fa-twitter-alt fa-lg" aria-hidden="true" title="Twitter"></i>](https://twitter.com/nupamoreP)
 [<i class="fa fa-envelope fa-lg" aria-hidden="true" title="Gmail"></i>](mailto:nupamore@gmail.com)
 
 
@@ -24,55 +23,56 @@
 
 
 # Skills
+I 💖 JS and Golang
+
 ---
-## Web
-- ### Backend
-  - Open API experience *OAuth, Twitter, Kakaotalk, Youtube*
-  - Node.js projects experience *Express, Mysql*
-    - [CGSS bot](https://github.com/nupamore/cgss-yellowid)
-    - [hassan.kr](https://github.com/nupamore/Hsub-Editor)
-  - Published npm modules
-    - [anisub](https://www.npmjs.com/package/anisub)
-    - [smi2vtt](https://www.npmjs.com/package/smi2vtt)
+## Backend
+- Open API experience *JSONP, REST, OAuth, JWT*
+- Web server *express.js, gofiber, AWS Lambda*
+- Database *Mysql, RDS*
+- Chatbot *Kakaotalk, Discord*
+  - [CGSS bot](https://github.com/nupamore/cgss-yellowid) *nodejs*
+  - [Pamo bot](https://github.com/nupamore/pamo_bot) *golang*
+- NPM packages
+  - [anisub](https://www.npmjs.com/package/anisub),
+  [smi2vtt](https://www.npmjs.com/package/smi2vtt)
+  - Managing company's npm *Verdaccio*
 
-- ### Frontend
-  - VanillaJS development experience
-  - Framework experience *Vue, Angular*
-    - [Hsub editor](https://github.com/nupamore/Hsub-Editor)
-  - Modern web knowledge *ES6-7, Webpack, Babel, Gulp, Sass*
-    - [My boilerplate](https://github.com/nupamore/my-style/tree/master/javascript/boilerplate)
-  - Developed web components
-    - [Canvas game engine](https://github.com/MCStudy/MCS-Engine)
-    - [Youtube music player](https://github.com/nupamore/youtube-music-player)
-  - Publishing *JQuery, Bootstrap*
-    - In Pearl Abyss
-
-<br>
-
-## Server Administrator
-- Shell experience *Linux, MacOS*
-- Managing 2 physical servers
-  - AWS *EC2, RDS*
-  - Raspberry pi
+## Web Frontend
+- <=ie8 support experience *DOM, JQuery*
+- Publishing *SCSS, ElementUI*
+  - [Artist page](litmuzik/index.html)
+- Framework & SSR experience *Vue & Nuxt*
+- Modern web knowledge *Webpack, Babel, ESlint, Stylelint, Prettier*
+- Graphics *anime.js, three.js*
+  - [Canvas game engine](https://github.com/MCStudy/MCS-Engine)
 
 <br>
 
-## Play
+## DevOps
+- Shell experience *Ubuntu, MacOS, Vim*
+- Managed servers *EC2, Raspberry pi*
+- CI/CD *CircleCI, Jenkins*
+- Container *Docker*
+
+<br>
+
+## Interests
 - Game
-  - [Canvas game](https://github.com/MCStudy/findTheSun)
-  - UE4 experience
-- Graphics *Three.js, Processing, GLSL*
+  - [Canvas game](https://github.com/nupamore/findTheSun)
+  - Unity, UE4
+- Graphics *OpenGL, Processing, GLSL*
   - [My graphics works](https://github.com/nupamore/graphics)
-  - [Unity auto resolution shader](https://booth.pm/ko/items/1740420)
+  - [Unity auto resolution shader](https://github.com/nupamore/vrc-autoresize-photoframe)
 - Music
-  - [Markdown Music Notation](http://nupamore.github.io/Markdown-Music-Notation/examples/)
+  - [Markdown Music Notation](https://github.com/nupamore/Markdown-Music-Notation)
 
 <br>
 
-## Other experience
+## Just experiences
 *C++, Java, Python, PHP, JSP,
+AngularJS, Materialize
 Android, Electron, Arduino,
-Materialize, MDL,
 iBatis, PLSQL,
-Unity, OpenGL, VRML,
-Jess, Functional programming, parcel*
+VRML,
+Jess, Functional programming*

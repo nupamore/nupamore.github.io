@@ -6,6 +6,10 @@
   #intro > .container {
     padding-top: 10%;
   }
+  #intro > img {
+    max-width: none;
+    width: 100%;
+  }
   #intro div{
     height: auto;
   }

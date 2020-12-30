@@ -5,6 +5,10 @@ body {
   font-size: 16px;
 }
 
+header img {
+  border-radius: 50%;
+}
+
 footer {
   bottom: 0px;
 }
