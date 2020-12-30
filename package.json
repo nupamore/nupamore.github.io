@@ -4,7 +4,7 @@
   "description": "github blog",
   "main": "render.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "render": "node render.js"
   },
   "repository": {
     "type": "git",

@@ -2,6 +2,7 @@
 [![avatar](img/avatar.jpg)](https://github.com/nupamore)
 
 # Sangbaek Lee
+#### nupamore
 - *2017 - 2019* Pearl Abyss
   - Front-end web
 - *2013 - 2015* Air Force OICW
