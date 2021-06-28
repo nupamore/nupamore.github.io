@@ -3,13 +3,11 @@
 
 # Sangbaek Lee
 #### nupamore
+- *2021 ~* Qrio Studio
+- *2020 - 2021* Virnect
 - *2017 - 2019* Pearl Abyss
-  - Front-end web
 - *2013 - 2015* Air Force OICW
-  - C4I Development  
-    *EJB struts, OracleDB*
 - *2011 - 2020* Gachon University
-  - Major in Computer Engineering
 
 <br>
 
@@ -55,8 +53,8 @@ I 💖 JS and Golang
 ## DevOps
 - Shell experience *Ubuntu, MacOS, Vim*
 - Managed servers *EC2, Raspberry pi*
-- CI/CD *CircleCI, Jenkins*
-- Container *Docker*
+- CI/CD *CircleCI, Jenkins, Action*
+- Container *Docker, ECS*
 
 <br>
 
@@ -75,8 +73,8 @@ I 💖 JS and Golang
 
 ### Just experiences
 *C++, Java, Python, PHP, JSP,
-AngularJS, Materialize
+AngularJS, Materialize, Element-UI,
 Android, Electron, Arduino,
-iBatis, PLSQL,
+Oracle, PLSQL,
 VRML,
 Jess, Functional programming*
