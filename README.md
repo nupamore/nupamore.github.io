@@ -1,4 +1,4 @@
-[![avatar](img/avatar.jpg)](https://github.com/nupamore)
+[![avatar](img/avatar.png)](https://github.com/nupamore)
 
 # Maru
 
@@ -19,11 +19,11 @@
 
 <br><!-- split --><br>
 
-![Metrics](https://github.com/nupamore/nupamore/blob/master/github-metrics.svg)
+![Metrics](https://raw.githubusercontent.com/nupamore/nupamore/master/github-metrics.svg)
 
 # Skills
 
-I 💖 JS and Golang
+I 💖 JS, and I like Go and Rust.
 
 ---
 
