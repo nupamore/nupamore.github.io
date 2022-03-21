@@ -1,68 +1,74 @@
-
 [![avatar](img/avatar.jpg)](https://github.com/nupamore)
 
-# Sangbaek Lee
+# Maru
+
 #### nupamore
-- *2021 ~* Qrio Studio
-- *2020 - 2021* Virnect
-- *2017 - 2019* Pearl Abyss
-- *2013 - 2015* Air Force OICW
-- *2011 - 2020* Gachon University
+
+- _2021 ~_ MXXR
+- _2020 - 2021_ Virnect
+- _2017 - 2019_ Pearl Abyss
+- _2013 - 2015_ Air Force OICW
+- _2011 - 2020_ Gachon University
 
 <br>
 
 ### Contact
+
 [<i class="fa fa-github-alt fa-lg" aria-hidden="true" title="Github"></i>](https://github.com/nupamore)
 [<i class="fa fa-envelope fa-lg" aria-hidden="true" title="Gmail"></i>](mailto:nupamore@gmail.com)
 
-
-
 <br><!-- split --><br>
 
-
+![Metrics](https://github.com/nupamore/nupamore/blob/master/github-metrics.svg)
 
 # Skills
+
 I 💖 JS and Golang
 
 ---
+
 ## Web Frontend
-- <=ie8 support experience *DOM, JQuery*
-- Publishing *SCSS, ElementUI*
+
+- <=ie8 support experience _DOM, JQuery_
+- Publishing _SCSS, ElementUI_
   - [Artist page](litmuzik/index.html)
-- Framework & SSR experience *Vue & Nuxt*
-- Modern web knowledge *Webpack, Babel, ESlint, Stylelint, Prettier*
-- Graphics *anime.js, three.js*
+- Framework & SSR experience _Vue & Nuxt_
+- Modern web knowledge _Webpack, Babel, ESlint, Stylelint, Prettier_
+- Graphics _anime.js, three.js_
   - [Canvas game engine](https://github.com/MCStudy/MCS-Engine)
 
 <br>
 
 ## Backend
-- Open API experience *JSONP, REST, OAuth, JWT*
-- Web server *express.js, gofiber, AWS Lambda*
-- Database *Mysql, RDS*
-- Chatbot *Kakaotalk, Discord*
-  - [CGSS bot](https://github.com/nupamore/cgss-yellowid) *nodejs*
-  - [Pamo bot](https://github.com/nupamore/pamo_bot) *golang*
+
+- Open API experience _JSONP, REST, OAuth, JWT_
+- Web server _express.js, gofiber, AWS Lambda_
+- Database _Mysql, RDS_
+- Chatbot _Kakaotalk, Discord_
+  - [CGSS bot](https://github.com/nupamore/cgss-yellowid) _nodejs_
+  - [Pamo bot](https://github.com/nupamore/pamo_bot) _golang_
 - NPM packages
   - [anisub](https://www.npmjs.com/package/anisub),
-  [smi2vtt](https://www.npmjs.com/package/smi2vtt)
-  - Managing company's npm *Verdaccio*
+    [smi2vtt](https://www.npmjs.com/package/smi2vtt)
+  - Managing company's npm _Verdaccio_
 
 <br>
 
 ## DevOps
-- Shell experience *Ubuntu, MacOS, Vim*
-- Managed servers *EC2, Raspberry pi*
-- CI/CD *CircleCI, Jenkins, Action*
-- Container *Docker, ECS*
+
+- Shell experience _Ubuntu, MacOS, Vim_
+- Managed servers _EC2, Raspberry pi_
+- CI/CD _CircleCI, Jenkins, Action_
+- Container _Docker, ECS_
 
 <br>
 
 ## Interests
+
 - Game
   - [Canvas game](https://github.com/nupamore/findTheSun)
   - Unity, UE4
-- Graphics *OpenGL, Processing, GLSL*
+- Graphics _OpenGL, Processing, GLSL_
   - [My graphics works](https://github.com/nupamore/graphics)
   - [Unity auto resolution shader](https://github.com/nupamore/vrc-autoresize-photoframe)
 - Music
@@ -72,9 +78,9 @@ I 💖 JS and Golang
 <br>
 
 ### Just experiences
-*C++, Java, Python, PHP, JSP,
+
+_C++, Java, Python, PHP, JSP,
 AngularJS, Materialize, Element-UI,
 Android, Electron, Arduino,
-Oracle, PLSQL,
-VRML,
-Jess, Functional programming*
+Oracle, PLSQL,VRML,
+Jess, Functional programming_
