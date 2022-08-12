@@ -4,9 +4,10 @@
 
 #### nupamore
 
-- _2021 ~_ MXXR
+- _2022 ~_ [![nexon](img/nexon.png)](https://company.nexon.com/)
+- _2021 - 2022_ MXXR
 - _2020 - 2021_ Virnect
-- _2017 - 2019_ Pearl Abyss
+- _2017 - 2019_ [![pearl abyss](img/pa.svg)](https://www.pearlabyss.com/)
 - _2013 - 2015_ Air Force OICW
 - _2011 - 2020_ Gachon University
 
@@ -23,7 +24,7 @@
 
 # Skills
 
-I 💖 JS, and I like Go and Rust.
+I 💖 `Typescript` and `Vue`. Also I interested in `Go` and `Rust`.
 
 ---
 
