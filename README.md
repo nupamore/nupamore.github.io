@@ -4,7 +4,8 @@
 
 #### nupamore
 
-- _2022 ~_ [![nexon](img/nexon.svg)](https://company.nexon.com/)
+<!-- - _2022 ~_ [![nexon](img/nexon.svg)](https://company.nexon.com/) -->
+
 - _2021 - 2022_ MXXR
 - _2020 - 2021_ Virnect
 - _2017 - 2019_ [![pearl abyss](img/pa.svg)](https://www.pearlabyss.com/)

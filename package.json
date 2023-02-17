@@ -6,6 +6,10 @@
   "scripts": {
     "render": "node render.js"
   },
+  "volta": {
+    "node": "18.12.0",
+    "yarn": "1.22.18"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nupamore/nupamore.github.io.git"
